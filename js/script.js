@@ -2,7 +2,7 @@ const input = document.getElementById("context");
 const btn = document.getElementById("enter-button");
 const contain = document.getElementsByClassName("container")[0];
 let todo = "";
-const getItems = localStorage.getItem("todo");
+//const getItems = localStorage.getItem("todo");
 
 let addElement = (val) => {
     if (val != "") {
@@ -50,11 +50,11 @@ let divs = document.querySelector(".container");
 divs.addEventListener("click", e => {
     if (e.target.tagName === "BUTTON") {
         e.target.parentElement.remove();
-        localStorage.setItem("todo", getItems.replace(`${e.target.previousElementSibling.textContent},`, ""));
+        localStorage.setItem("todo", localStorage.getItem("todo").replace(`${e.target.previousElementSibling.textContent},`, ""));
     };
 });
 
 //loads in any previous cards
-getItems.split(",").forEach(item => {
+localStorage.getItem("todo").split(",").forEach(item => {
     addElement(item);
 });
