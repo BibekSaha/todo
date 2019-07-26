@@ -33,13 +33,13 @@ let addElement = (val) => {
 //Enter button action
 function addCardAfterKeyPress(event) {
     if (event.keyCode === 13) {
-        addElement(input.value);
+        addElement(input.value.trim());
     }
 }
 
 //Enter click button
 btn.addEventListener("click", function () {
-    addElement(input.value);
+    addElement(input.value.trim());
 });
 
 input.addEventListener("keypress", addCardAfterKeyPress);
