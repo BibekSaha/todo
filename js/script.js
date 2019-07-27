@@ -2,7 +2,6 @@ const input = document.getElementById("context");
 const btn = document.getElementById("enter-button");
 const contain = document.getElementsByClassName("container")[0];
 let todo = "";
-//const getItems = localStorage.getItem("todo");
 
 let addElement = (val) => {
     if (val != "") {
